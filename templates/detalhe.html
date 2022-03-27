@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Detalhe
+{% endblock titulo %}
+
+{% block body %}
+<h2 align="center"> {{ postagemPesquisada.titulo }} </h2>
+<p> {{ postagemPesquisada.texto }} </p>
+
+<div align="center">
+  <a href="{% url 'principal' %}"> Voltar </a>
+  <a href="{% url 'delete' postagemPesquisada.id %}"> Deletar essa postagem </a>
+  <a href="{% url 'alterar' postagemPesquisada.id %}">Alterar postagem</a>
+</div>
+{% endblock body %}

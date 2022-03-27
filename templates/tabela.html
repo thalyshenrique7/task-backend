@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}
+Tabelas
+{% endblock titulo %}
+
+{% block body %}
+<h2>Produtos</h2>
+<table border="1" width="30%">
+        <tr align="center">
+            <td>001</td>
+            <td>Notebook Lenovo Ideapad 3i</td>
+            <td>R$ 3.199,99</td>
+        </tr>
+
+        <tr align="center">
+            <td>002</td>
+            <td>Headset Fortrek Black Fire</td>
+            <td>R$ 150,00</td>
+        </tr>
+
+        <tr align="center">
+            <td>003</td>
+            <td>Iphone 12 Pro Max</td>
+            <td>R$ 9.000,00</td>
+        </tr>
+
+        <tr align="center">
+            <td>004</td>
+            <td>Cadeira Gamer</td>
+            <td>R$ 1.000,00</td>
+        </tr>
+</table>
+
+<br>
+
+<div>
+    <a href="{% url 'principal' %}">Voltar</a>
+</div>
+{% endblock body %}

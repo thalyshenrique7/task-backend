@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/cadastro.css' %}">
+{% endblock css %}
+
+{% block titulo %}
+Faça seu cadastro
+{% endblock titulo %}
+
+{% block body %}
+<h2 >Faça seu cadastro</h2>
+<hr color="purple" width="200" align="left">
+<form ">
+    Nome:<br>
+    <input type="text" name="nome"><br>
+
+    Idade:<br>
+    <input type="text" name="idade"><br>
+
+    Email:<br>
+    <input type="text" name="email"><br>
+
+    Senha:<br>
+    <input type="password" name="senha"><br>
+
+    Telefone:<br>
+    <input type="text" name="telefone"><br>
+
+    Endereço:<br>
+    <input type="text" name="endereco"><br>
+
+    <input type="button" value="Cadastrar">
+
+</form>
+
+<br>
+<br>
+<br>
+
+<div>
+    <a href="{% url 'principal' %}">Voltar</a>
+</div>
+
+{% endblock body %}

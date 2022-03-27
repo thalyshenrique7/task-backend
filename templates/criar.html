@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/criar.css' %}">
+{% endblock css %}
+    
+{% block titulo %}
+Criar postagem
+{% endblock titulo %}
+
+{% block body %}
+    <div align="center">
+          <h1>Crie sua postagem</h1>
+          <hr color="purple" width="400">
+          <form enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
+            {{formulario.as_p}}
+            <button type="submit">Salvar</button>
+      </form>
+  </div>
+
+<br>
+<br>
+      
+      <div align="center">
+            <a href="{% url 'principal' %}">Voltar</a>
+      </div>
+{% endblock body %}

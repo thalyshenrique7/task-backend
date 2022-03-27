@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+        <link rel="stylesheet" href="{% static 'css/principal.css' %}">
+{% endblock css %}
+            
+{% block titulo %}
+    FS - Página Principal
+{% endblock titulo %}
+
+{% block body %}
+        <!-- Topo da página -->
+        <div>
+                <h1>Fábrica de Software</h1>
+        </div>
+                
+        <div>
+                <img src="{% static 'images/logofs1.png' %}" width="100" " alt="">
+                <img src="{% static 'images/logofs2.png' %}" width="100" " alt="">
+        </div>
+                <hr color="purple">
+                
+                <!-- Bloco "O que somos?"-->
+        <div>
+                <h2>O que somos?</h2>
+                <p><strong>O Projeto de Extensão Fábrica De Software (FS)</strong> é uma incubadora de projetos que atende a demandas de empresas públicas e privadas, dentro de uma estrutura corporativa de desenvolvimento de soluções de base tecnológica, com o objetivo de aproximar a realidade de mercado ao estudante. Isso possibilita o crescimento e aprimoramento dos estudantes a partir da construção de projetos reais, oportunizando ao aluno uma formação diferenciada alinhada às melhores práticas profissionais e às matrizes curriculares dos cursos do UBTech TI. Com doze anos de atividades, a FS já recebeu mais de 1.900 alunos de TI, 40 professores colaboradores, firmou mais de 20 parcerias e desenvolveu mais de uma centena de soluções, entregues e com transferência tecnológica para os clientes externos e internos à IES. Hoje a FS consolida-se como agente ativo na era da Transformação Digital, condutor do conceito de “mindset digital” aos alunos de outros cursos da IES, por meio de projetos transversais às áreas do conhecimento. Fomentada pelas parcerias com empresas privadas de tecnologia, órgãos públicos e outros cursos da IES, a FS desenvolve soluções inovadoras em Sistemas WEB e Mobile; Inteligência Artificial; Machine Learning; Processos de Automação de Teste de Software; Jogos Educativos, de Aventura e de Estratégia; BI; Análise de Dados e Motores de Reconhecimento de Imagens. A FS viabilizou diretamente a inserção de mais de 400 alunos no mercado de trabalho, muitos hoje em posições de destaque em grandes empresas.</p>
+        </div>
+
+        <hr color="yellow">
+     
+        <div>
+                <!-- Benefícios da Fábrica de Software -->
+                <h3>Benefícios em participar da Fábrica de Software</h3>
+                <ul type="square">
+                        <li>Workshops: Assista workshops feitos por veteranos e adquira conhecimento para usar na sua vida profissional</li>
+                        <li>Empresas: Grandes empresas regionais são parceiras da fábrica e podem estar de olho em você</li>
+                        <li>Certificados: Participando da fábrica, você ganha certificados que contam como horas complementares</li>
+                        <li>A Fábrica te oferece a chance de você criar seu próprio portfólio, e se destacar no mercado</li>
+                </ul>
+        </div>
+
+         
+
+        <hr color="purple">
+
+        <!-- Link para acessar criar uma postagem -->
+        <div align="center">
+                <a href="{% url 'criar' %}">Criar uma postagem</a>
+        </div>
+       
+        <br>
+
+          <!-- Link para acessar cadastro  -->
+          <div align="center">
+                <a href="{% url 'cadastro' %}">Faça seu cadastro</a>
+        </div>
+
+        <br>
+
+          <!-- Link para acessar a tabela  -->
+          <div align="center">
+                <a href="{% url 'tabela' %}">Tabelas</a>
+        </div>
+
+                {% for item in posts %}
+                <!-- Link para acessar postagem criada -->
+                <h2>{{item.titulo}}</h2>
+                <a href="{% url 'detalhe' item.id %}">Acessar</a>
+                {% endfor %}
+        </div>
+
+{% endblock body %}
