@@ -1,2 +1,7 @@
-# task-backend
-software factory final task using html5, css3, python and django (back-end)
+Desafio final - Fábrica de Software (Back-End)
+
+Ferramentas utllizadas: 
+- HTML
+- CSS
+- Python
+- Django REST Framework
